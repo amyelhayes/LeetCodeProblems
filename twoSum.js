@@ -1,8 +1,8 @@
-var twoSum = function (nums, target) {
-    var result = [];
+const bruteForceTwoSum = (nums, target)=>  {
+    let result = [];
   
-    for (var i = 0; i < nums.length; i++) {
-      for (var j = i + 1; j < nums.length; j++) {
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
         if (nums[i] + nums[j] === target) {
           result.push(i);
           result.push(j);
@@ -10,6 +10,27 @@ var twoSum = function (nums, target) {
       }
     }
     return result;
-  }
-  console.log(twoSum([2, 5, 4, 1, 7], 3));
+  };
+  console.log(bruteForceTwoSum([2, 5, 4, 1, 7], 3));
   // Output [ 0, 3 ]
+
+
+  //----------------------------------Solution 2-----------------------------------------------
+
+  const improvedTwoSum = (nums, target) => {
+
+    let hash = {};
+
+    for(let i = 0; i < nums.length; i++) {
+        if(hash[target-nums[i]] != undefined) {
+            return [hash[target-nums[i]], i]
+        }
+        hash[nums[i]] = i
+    }
+  }
+
+console.log(improvedTwoSum([2, 5, 4, 1, 7], 3));
+// Output [0,3]
+
+  //----------------------------------Solution 3-----------------------------------------------
+  

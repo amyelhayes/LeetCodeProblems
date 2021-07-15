@@ -32,5 +32,4 @@ const bruteForceTwoSum = (nums, target)=>  {
 console.log(improvedTwoSum([2, 5, 4, 1, 7], 3));
 // Output [0,3]
 
-  //----------------------------------Solution 3-----------------------------------------------
-  
+ 
